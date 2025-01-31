@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+      .name_color {
+        color: #333333;
+      }
+      .profession_color {
+        color: #494949;
+      }
+     *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+            font-family: 'font-inter', sans-serif;
+        }
+      
+        #nav-toggle:checked ~ #mobile-menu {
+          display: block;
+        }
+        .bg-light-blue {
+            background-color: #0099FF0A;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px; 
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .title {
+            font-weight: 500; 
+        }
+
+        .title-font {
+          font-family: 'Inter', sans-serif; 
+        }
+
+        .text-gray-900 {
+            color: #000; 
+        }
+
+        .text-gray-500 {
+            color: #777; 
+        }
+
+        .leading-relaxed {
+            line-height: 1.625; 
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px; 
+        }
+
+        .team-member {
+            position: relative;
+            overflow: hidden;
+            
+        }
+
+        .team-member img {
+            width: 100%;
+            height: auto; 
+            display: block; 
+        }
+
+        .member-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            padding: 16px;
+            border: 1px solid black;
+            border-top: none; 
+            transform: translateY(100%);
+            transition: transform 0.3s ease; 
+        }
+
+        .team-member:hover .member-info {
+            transform: translateY(0);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .name {
+            font-size: 1.25rem;
+            font-weight: bold;
+            line-height: 1.75rem;
+            color: #333;
+        }
+
+        .profession {
+            font-size: 1rem; 
+            line-height: 1.6; 
+            color: #666; 
+        }
+      </style>
+    </style>
+  </head>
+  <body class="font-sans">
+    <header class="border-b border-[#DADADA]">
+      <nav class="container mx-auto px-4 py-6 flex justify-between items-center relative">
+       
+        <a href="#">
+          <img src="assets/logos/Main_logo.png" alt="Logo" class="h-8" />
+        </a>
+        <ul class="hidden md:flex space-x-8">
+          <li><a href="#" class="hover:text-blue-600">Home</a></li>
+          <li><a href="#" class="hover:text-blue-600">Services</a></li>
+          <li><a href="#" class="hover:text-blue-600">About Us</a></li>
+          <li><a href="#" class="hover:text-blue-600">Portfolio</a></li>
+          <li><a href="#" class="hover:text-blue-600">Contact</a></li>
+        </ul>
+        <button class="block" aria-label="Toggle menu">
+          <img src="assets/logos/Nav-button.png" alt="" />
+        </button>
+        <input type="checkbox" id="nav-toggle" class="hidden" />
+        <label for="nav-toggle" class="md:hidden cursor-pointer">
+          <svg class="w-8 h-8" fill="none" stroke="#000" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16" />
+          </svg>
+        </label>
+
+        <div id="mobile-menu" class="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg hidden">
+          <div class="container mx-auto px-4 py-6">
+          
+            <label for="nav-toggle" class="block text-right text-3xl cursor-pointer mb-4">×</label>
+            
+       
+            <ul class="space-y-4">
+              <li><a href="#" class="hover:text-blue-600 block text-lg">Home</a></li>
+              <li><a href="#" class="hover:text-blue-600 block text-lg">Services</a></li>
+              <li><a href="#" class="hover:text-blue-600 block text-lg">About Us</a></li>
+              <li><a href="#" class="hover:text-blue-600 block text-lg">Portfolio</a></li>
+              <li><a href="#" class="hover:text-blue-600 block text-lg">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>  
+    <main>
+      <div class="container mx-auto px-4 py-12 md:py-24">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="text-center md:text-left">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+              We are the best<br />
+              <span class="text-blue-600">agency in the world</span>
+            </h1>
+
+            <p class="text-gray-600 mb-8 max-w-lg mx-auto md:mx-0">
+              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+              amet sint. Velit officia consequat duis enim velit mollit.
+              Exercitation veniam consequat sunt nostrud amet.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+            >
+              <a
+                href="#"
+                class="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition"
+              >
+                Start a Project
+              </a>
+              <a
+                href="#"
+                class="border-2 border-gray-300 px-8 py-4 rounded-lg hover:border-blue-600 transition"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>    
+          <div class="bg-gray-100 rounded-xl aspect md:aspect-square">
+            <img
+              src="assets/images/man_2.jpg"
+              alt="Our Team"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- <div class="bg-[#0099FF0A]">
+        <div class="container mx-auto px-2 py-16 ">
+        
+          <div class="text-center mb-12">
+            <h1 class="font-semibold text-[20px] leading-[130%] name_color">Services</h1>
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">We Provide</h2>
+            <p class="text-gray-600 max-w-[35rem] mx-auto">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus
+              mattis nunc aliquam tincidunt est non. Viverra nec eu.
+            </p>
+          </div>   
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center">
+        
+            <div
+              class="bg-white py-16 rounded-lg shadow-md hover:shadow-lg transition-shadow flex flex-col justify-center items-center text-center"
+            >
+            
+              <div class="h-12 w-12 bg-blue-100 rounded-lg mb-4">
+                <img src="assets/images/web_design.jpg" alt="" />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Web Design</h3>
+              <p class="text-gray-600">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>      
+            <div
+              class="bg-white py-16  rounded-lg shadow-md hover:shadow-lg transition-shadow flex flex-col justify-center items-center text-center"
+            >
+      
+              <div class="h-12 w-12 bg-blue-100 rounded-lg mb-4">
+                <img src="assets/images/ui_ux.jpg" alt="" />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                UI/UX Design
+              </h3>
+              <p class="text-gray-600">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>       
+            <div
+              class="bg-white py-16 rounded-lg shadow-md hover:shadow-lg transition-shadow flex flex-col justify-center items-center text-center"
+            >
+            
+              <div class="h-12 w-12 bg-blue-100 rounded-lg mb-4">
+                <img src="assets/images/graphic_design.jpg" alt="" />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Graphics Design
+              </h3>
+              <p class="text-gray-600">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+            <div
+              class="bg-white py-16 rounded-lg shadow-md hover:shadow-lg transition-shadow flex flex-col justify-center items-center text-center"
+            >
+            >
+              <div class="h-12 w-12 bg-blue-100 rounded-lg mb-4">
+                <img src="assets/images/seo_marketing.jpg" alt="" />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                SEO Marketing
+              </h3>
+              <p class="text-gray-600">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="bg-[#0099FF0A]">
+        <div class="container mx-auto px-2 py-16">
+          <div class="text-center mb-12">
+            <h1 class="font-semibold text-[20px] leading-[130%] name_color">Services</h1>
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">We Provide</h2>
+            <p class="text-gray-600 max-w-[35rem] mx-auto">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus mattis nunc aliquam tincidunt est non. Viverra nec eu.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-center">
+            <div class="bg-white py-16 rounded-lg shadow-md hover:shadow-lg transition-shadow flex flex-col justify-center items-center text-center">
+              <div class="h-12 w-12 bg-blue-100 rounded-lg mb-4">
+                <img src="assets/images/web_design.jpg" alt="Web Design" />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Web Design</h3>
+              <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="bg-white py-16 rounded-lg shadow-md hover:shadow-lg transition-shadow flex flex-col justify-center items-center text-center">
+              <div class="h-12 w-12 bg-blue-100 rounded-lg mb-4">
+                <img src="assets/images/ui_ux.jpg" alt="UI/UX Design" />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">UI/UX Design</h3>
+              <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="bg-white py-16 rounded-lg shadow-md hover:shadow-lg transition-shadow flex flex-col justify-center items-center text-center">
+              <div class="h-12 w-12 bg-blue-100 rounded-lg mb-4">
+                <img src="assets/images/graphic_design.jpg" alt="Graphics Design" />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Graphics Design</h3>
+              <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="bg-white py-16 rounded-lg shadow-md hover:shadow-lg transition-shadow flex flex-col justify-center items-center text-center">
+              <div class="h-12 w-12 bg-blue-100 rounded-lg mb-4">
+                <img src="assets/images/seo_marketing.jpg" alt="SEO Marketing" />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">SEO Marketing</h3>
+              <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="container mx-auto p-4">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="w-full md:w-1/2 p-8 relative">
+            <div class="relative aspect-[610/560] md:aspect-auto">
+              <div class=" inset-0 flex items-center justify-center">
+                <div class="w-full h-full bg-white rounded-full overflow-hidden">
+                  <div class="placeholder-image">
+                    <img
+                      src="assets/images/young-blackhaired-man-demonstrating-something-bright-laptop.jpg"
+                      alt=""
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 p-8">
+            <h4 class="text-[20px] leading-[130%] font-semibold">About US</h4>
+            <h2 class="text-4xl font-bold mb-4">We are a creative agency</h2>
+            <p class="text-gray-600 mb-6">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec,
+              luctus sapien vulputate urna tempor euismod adipiscing massa.
+              Volutpat nunc quis dictum consectetur egestas varius.
+            </p>
+            <p class="text-gray-600 mb-6">
+              Ac sagittis tellus, sodales commodo elit, sociis purus. Egestas
+              mauris eget commodo commodo et vel fermentum ultrices.
+            </p>
+            <button
+              class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-3 px-10 rounded"
+            >
+              More About Us
+            </button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="bg-[#0099FF0A]">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="title sm:text-3xl text-2xl title-font mb-4 text-gray-900">Meet Our Team</h1>
+                <h2 class="title sm:text-4xl text-3xl title-font mb-2 text-gray-900">Our Expert Members</h2>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-500">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam vivamus pretium maecenas amet.
+                </p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="assets/images/Developer.jpg" alt="Jane Cooper">
+                    <div class="member-info">
+                        <div class="social-icons">
+                            <img src="assets/logos/facebook.png" alt="Facebook">
+                            <img src="assets/logos/pinterest.png" alt="Pinterest">
+                            <img src="assets/logos/Vector.png" alt="Vector">
+                            <img src="assets/logos/Instagram.png" alt="Instagram">
+                        </div>
+                        <div class="name title-font">Jane Cooper</div>
+                        <div class="profession title-font">Developer</div>
+                    </div>
+                </div>
+                 <div class="team-member">
+                    <img src="assets/images/Designer.jpg" alt="Brooklyn Simmons">
+                    <div class="member-info">
+                        <div class="social-icons">
+                            <img src="assets/logos/facebook.png" alt="Facebook">
+                            <img src="assets/logos/pinterest.png" alt="Pinterest">
+                            <img src="assets/logos/Vector.png" alt="Vector">
+                            <img src="assets/logos/Instagram.png" alt="Instagram">
+                        </div>
+                        <div class="name title-font">Brooklyn Simmons</div>
+                        <div class="profession title-font">Designer</div>
+                    </div>
+                </div>
+                 <div class="team-member">
+                    <img src="assets/images/Marketer.png" alt="Guy Hawkins">
+                    <div class="member-info">
+                        <div class="social-icons">
+                            <img src="assets/logos/facebook.png" alt="Facebook">
+                            <img src="assets/logos/pinterest.png" alt="Pinterest">
+                            <img src="assets/logos/Vector.png" alt="Vector">
+                            <img src="assets/logos/Instagram.png" alt="Instagram">
+                        </div>
+                        <div class="name title-font">Guy Hawkins</div>
+                        <div class="profession title-font">Marketer</div>
+                    </div>
+                </div>
+                 <div class="team-member">
+                    <img src="assets/images/Photographer.png" alt="Kristin Watson">
+                    <div class="member-info">
+                        <div class="social-icons">
+                            <img src="assets/logos/facebook.png" alt="Facebook">
+                            <img src="assets/logos/pinterest.png" alt="Pinterest">
+                            <img src="assets/logos/Vector.png" alt="Vector">
+                            <img src="assets/logos/Instagram.png" alt="Instagram">
+                        </div>
+                        <div class="name title-font">Kristin Watson</div>
+                        <div class="profession title-font">Photographer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+      <div class="container mx-auto py-12 px-">
+        <h2 class="text-3xl font-bold mb-8 ">More Projects</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img
+              src="assets/images/Medical_website.jpg"
+              alt="Medical Website"
+              class="w-[376px] h-[376px] w-full h-auto object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Medical Website</h3>
+              <p class="text-gray-600 mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                sed consectetur malesuada sodales enim viverra odio diam.
+                Nascetur dui elementum.
+              </p>
+              <a href="#" class="text-blue-500 hover:underline">Read more ></a>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img
+              src="assets/images/Cryptocurrency_website.jpg"
+              alt="Cryptocurrency Website"
+              class="w-[376px] h-[376px] w-full h-auto object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Cryptocurrency Website</h3>
+              <p class="text-gray-600 mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                sed consectetur malesuada sodales enim viverra odio diam.
+                Nascetur dui elementum.
+              </p>
+              <a href="#" class="text-blue-500 hover:underline">Read more ></a>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img
+              src="assets/images/BitcoinInvestment_website.jpg"
+              alt="Bitcoin Investment Web"
+              class="w-[376px] h-[376px] w-full h-auto object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Bitcoin Investment Web</h3>
+              <p class="text-gray-600 mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                sed consectetur malesuada sodales enim viverra odio diam.
+                Nascetur dui elementum.
+              </p>
+              <a href="#" class="text-blue-500 hover:underline">Read more ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container mx-auto px-4 py-16 bg-[#0099FF0A]">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-base font-semibold text-center mb-8">FAQ’S</h1>
+          <p class="text-6xl text-center font-bold  mb-12 ">
+            Find the answers you need
+          </p>
+          <section class="mb-4 group">
+            <input type="checkbox" id="item-1" class="hidden peer" />
+            <label
+              for="item-1"
+              class="flex justify-between items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+            >
+              <h2 class="text-lg font-semibold">Lorem ipsum dolor sit amet</h2>
+              <svg
+                class="w-6 h-6 transform transition-transform peer-checked:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </label>
+            <div
+              class="overflow-hidden max-h-0 peer-checked:max-h-96 transition-all duration-300"
+            >
+              <div class="p-6 text-gray-600">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus
+                  ornare in eget mauris. Porttitor semper sed nisi ac adipiscing
+                  vitae. Lobortis imperdiet ornare eleifend nisi ut auctor.
+                  Ornare etiam neque elementum mattis ultrices.
+                </p>
+              </div>
+            </div>
+          </section>     
+          <section class="mb-4 group">
+            <input type="checkbox" id="item-2" class="hidden peer" />
+            <label
+              for="item-2"
+              class="flex justify-between items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+            >
+              <h2 class="text-lg font-semibold">Lorem ipsum dolor sit amet</h2>
+              <svg
+                class="w-6 h-6 transform transition-transform peer-checked:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </label>
+            <div
+              class="overflow-hidden max-h-0 peer-checked:max-h-96 transition-all duration-300"
+            >
+              <div class="p-6 text-gray-600">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus
+                  ornare in eget mauris. Porttitor semper sed nisi ac adipiscing
+                  vitae. Lobortis imperdiet ornare eleifend nisi ut auctor.
+                  Ornare etiam neque elementum mattis ultrices.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="mb-4 group">
+            <input type="checkbox" id="item-3" class="hidden peer" />
+            <label
+              for="item-3"
+              class="flex justify-between items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+            >
+              <h2 class="text-lg font-semibold">Lorem ipsum dolor sit amet</h2>
+              <svg
+                class="w-6 h-6 transform transition-transform peer-checked:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </label>
+            <div
+              class="overflow-hidden max-h-0 peer-checked:max-h-96 transition-all duration-300"
+            >
+              <div class="p-6 text-gray-600">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus
+                  ornare in eget mauris. Porttitor semper sed nisi ac adipiscing
+                  vitae. Lobortis imperdiet ornare eleifend nisi ut auctor.
+                  Ornare etiam neque elementum mattis ultrices.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="mb-4 group">
+            <input type="checkbox" id="item-4" class="hidden peer" />
+            <label
+              for="item-4"
+              class="flex justify-between items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+            >
+              <h2 class="text-lg font-semibold">Lorem ipsum dolor sit amet</h2>
+              <svg
+                class="w-6 h-6 transform transition-transform peer-checked:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </label>
+            <div
+              class="overflow-hidden max-h-0 peer-checked:max-h-96 transition-all duration-300"
+            >
+              <div class="p-6 text-gray-600">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus
+                  ornare in eget mauris. Porttitor semper sed nisi ac adipiscing
+                  vitae. Lobortis imperdiet ornare eleifend nisi ut auctor.
+                  Ornare etiam neque elementum mattis ultrices.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="mb-4 group">
+            <input type="checkbox" id="item-5" class="hidden peer" />
+            <label
+              for="item-5"
+              class="flex justify-between items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+            >
+              <h2 class="text-lg font-semibold">Lorem ipsum dolor sit amet</h2>
+              <svg
+                class="w-6 h-6 transform transition-transform peer-checked:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </label>
+            <div
+              class="overflow-hidden max-h-0 peer-checked:max-h-96 transition-all duration-300"
+            >
+              <div class="p-6 text-gray-600">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus
+                  ornare in eget mauris. Porttitor semper sed nisi ac adipiscing
+                  vitae. Lobortis imperdiet ornare eleifend nisi ut auctor.
+                  Ornare etiam neque elementum mattis ultrices.
+                </p>
+              </div>
+            </div>
+          </section>
+       
+        </div>
+      </div>
+      <div class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-5xl font-bold mb-12 md:mb-16">
+            Customer testimonials
+          </h2>
+          <h5 class="text-gray-600 mb-12 md:mb-16">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </h5>  
+          <div class="grid md:grid-cols-3 gap-8 lg:gap-12"> 
+            <div class="shadow-md  p-6 rounded gap-12">
+              <img src="assets/logos/Stars.png" alt="" />
+              <p class="text-gray-600 mb-4 italic">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse varius enim in eros elementum tristique. Duis
+                cursus, mi quis viverra ornare."
+              </p>
+              <footer class="flex items-center">              
+                <div class="w-12 h-12 bg-gray-300 rounded-full mr-4">
+                  <img src="assets/images/Jerome.jpg" alt="" />
+                </div>
+                <div>
+                  <strong class="font-semibold">Jerome Bell</strong>
+                  <p class="text-sm text-gray-600">Marketing Coordinator</p>
+                </div>
+              </footer>
+            </div>
+            <div class="shadow-md  p-6 rounded">
+              <img src="assets/logos/Stars.png" alt="" />
+              <p class="text-gray-600 mb-4 italic">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse varius enim in eros elementum tristique. Duis
+                cursus, mi quis viverra ornare."
+              </p>
+              <footer class="flex items-center">
+                <div class="w-12 h-12 bg-gray-300 rounded-full mr-4">
+                  <img src="assets/images/Cody.jpg" alt="" />
+                </div>
+                <div>
+                  <strong class="font-semibold">Cody Fisher</strong>
+                  <p class="text-sm text-gray-600">President of Sales</p>
+                </div>
+              </footer>
+            </div>
+            <div class="shadow-md  p-8 rounded">
+              <img src="assets/logos/Stars.png" alt="" />
+              <p class="text-gray-600 mb-4 italic">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse varius enim in eros elementum tristique. Duis
+                cursus, mi quis viverra ornare."
+              </p>
+              <footer class="flex items-center">
+                <div class="w-12 h-12 bg-gray-300 rounded-full mr-4">
+                  <img src="assets/images/Robert.jpg" alt="" />
+                </div>
+                <div>
+                  <strong class="font-semibold">Robert Fox</strong>
+                  <p class="text-sm text-gray-600">Web Designer</p>
+                </div>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+          <div class="container mx-auto px-4 py-16 flex flex-col justify-between items-center bg-[#333333] text-white rounded p-5 w-full  shadow-md md:flex-row md:p-10">
+            <div class="text-center md:text-left py-[50px]">
+                <h2 class="text-[32px] font-bold mb-2 md:text-3xl mb-6">Do you have a project in mind?</h2>
+                <p class="font-['Inter',_sans-serif] text-[18px] text-base leading-relaxed mb-5 md:text-lg md:max-w-md">
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit amet diam in est pharetra porttitor libero.
+                </p>
+            </div>
+            <button class="bg-blue-600 text-white py-3 px-12 rounded text-base font-medium transition duration-300 ease-in-out hover:bg-blue-800 font-['Inter',_sans-serif]  text-[18px] leading-[160%]">
+                Let's talk
+            </button>
+        </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-[#0099FF0A] py-20">
+      <div class="container mx-auto px-8">
+          <div class="w-full flex flex-col md:flex-row py-6">
+              <div class="flex-1 mb-6">
+                  <div class="flex items-center mb-4">
+                      <img src="assets/logos/Main_logo.png" alt="">
+                  </div>
+                  <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie nulla massa fringilla.</p>
+                  <div class="flex space-x-4 items-center">
+                      <a href="#" class="text-white hover:text-gray-800"><img src="assets/logos/Twitter.png" alt=""></a>
+                      <a href="#" class="text-white hover:text-gray-800"><img src="assets/logos/Instagram.png" alt=""></a>
+                      <a href="#" class="text-white hover:text-gray-800"><img src="assets/logos/Linkdin.png" alt=""></a>
+                      <a href="#" class="text-white hover:text-gray-800"><img src="assets/logos/youtube.png" alt=""></a>
+                      <a href="#" class="text-white hover:text-gray-800"><img src="assets/logos/WhatsApp.png" alt=""></a>
+                      <a href="#" class="text-white hover:text-gray-800"><img src="assets/logos/Behance.png" alt=""></a>
+                  </div>
+              </div>
+              <div class="flex-1 mb-6">
+                  <h2 class="text-xl font-semibold mb-4">Menu</h2>
+                  <ul>
+                      <li class="mb-2"><a href="#" class="text-gray-500 hover:text-gray-800">Home</a></li>
+                      <li class="mb-2"><a href="#" class="text-gray-500 hover:text-gray-800">About Us</a></li>
+                      <li class="mb-2"><a href="#" class="text-gray-500 hover:text-gray-800">Blog</a></li>
+                      <li class="mb-2"><a href="#" class="text-gray-500 hover:text-gray-800">Blog post</a></li>
+                      <li class="mb-2"><a href="#" class="text-gray-500 hover:text-gray-800">Contact</a></li>
+                  </ul>
+              </div>
+              <div class="flex-1 mb-6">
+                  <h2 class="text-xl font-semibold mb-4">Utility Pages</h2>
+                  <ul>
+                      <li class="mb-2"><a href="#" class="text-gray-500 hover:text-gray-800">Start Here</a></li>
+                      <li class="mb-2"><a href="#" class="text-gray-500 hover:text-gray-800">Styleguide</a></li>
+                      <li class="mb-2"><a href="#" class="text-gray-500 hover:text-gray-800">Password Protected</a></li>
+                      <li class="mb-2"><a href="#" class="text-gray-500 hover:text-gray-800">404 Not Found</a></li>
+                      <li class="mb-2"><a href="#" class="text-gray-500 hover:text-gray-800">Licenses</a></li>
+                  </ul>
+              </div>
+              <div class="flex-1 mb-6">
+                  <h2 class="text-xl font-bold mb-4">Subscribe to our newsletter</h2>
+                  <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipiscing elit am dolor sit.</p>
+                  <form>
+                      <input type="email" placeholder="Enter your email" class="w-full mb-2 px-4 py-2 bg-gray-800 text-white rounded">
+                      <button type="submit" class="w-32 px-2 py-2 bg-blue-500 text-white rounded">Subscribe</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </footer>
+  </body>
+</html>
